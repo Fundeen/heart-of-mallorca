@@ -87,6 +87,7 @@ const VideoHub = () => {
   return (
     <section id="proyecto" className="section-padding bg-card">
       <div className="container-wide">
+        {/* Chapter intro */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -94,15 +95,13 @@ const VideoHub = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 md:mb-16"
         >
-          <span className="text-caption text-primary mb-4 block">
-            Conoce el proyecto
-          </span>
+          <span className="text-caption text-primary mb-2 block">Capítulo 2</span>
           <h2 className="text-editorial-lg text-foreground mb-4">
-            Historias que importan
+            Las voces del proyecto
           </h2>
           <p className="text-body text-muted-foreground max-w-2xl mx-auto">
-            Detrás de cada proyecto hay personas. Descubre las voces de quienes 
-            hacen posible Son Ripollet.
+            Detrás de cada proyecto hay personas. Conoce a quienes hacen posible 
+            Son Ripollet y escucha sus historias.
           </p>
         </motion.div>
 
@@ -114,6 +113,20 @@ const VideoHub = () => {
             />
           ))}
         </div>
+
+        {/* Narrative text after videos */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 text-center max-w-3xl mx-auto"
+        >
+          <p className="text-lg text-muted-foreground">
+            Cada historia que escuches es una razón más para confiar. 
+            No son actores, son personas reales que han decidido invertir en su tierra.
+          </p>
+        </motion.div>
       </div>
     </section>
   );
