@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 
 const fundeenButtonVariants = cva(
-  "group inline-flex items-center justify-between w-fit whitespace-nowrap transition-all duration-500 font-stratos-medium uppercase border rounded-sm hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 overflow-hidden disabled:opacity-30 disabled:cursor-default",
+  "group inline-flex items-center justify-center w-fit whitespace-nowrap transition-all duration-500 font-stratos-medium uppercase border rounded-sm hover:cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 overflow-hidden disabled:opacity-30 disabled:cursor-default",
   {
     variants: {
       variant: {
@@ -20,11 +20,11 @@ const fundeenButtonVariants = cva(
           "border-navy text-navy bg-transparent hover:bg-navy/10",
       },
       size: {
-        "2xl": "gap-8 text-2xl py-4 pr-5 pl-6",
-        xl: "gap-8 text-xl py-4 px-5",
-        l: "gap-8 text-lg py-4 px-5",
-        m: "gap-6 text-base py-3 px-5",
-        s: "gap-4 text-sm py-2 pr-3 pl-4",
+        "2xl": "text-2xl py-4 px-6",
+        xl: "text-xl py-4 px-5",
+        l: "text-lg py-4 px-5",
+        m: "text-base py-3 px-5",
+        s: "text-sm py-2 px-4",
       },
       responsive: {
         true: "",
@@ -35,7 +35,7 @@ const fundeenButtonVariants = cva(
       {
         size: "2xl",
         responsive: true,
-        className: "text-lg md:text-xl lg:text-2xl py-4 px-5 md:pr-5 md:pl-6",
+        className: "text-lg md:text-xl lg:text-2xl py-4 px-5 md:px-6",
       },
       {
         size: "xl",
@@ -139,41 +139,37 @@ const FundeenButton = React.forwardRef<HTMLButtonElement, FundeenButtonProps>(
     ref
   ) => {
     const buttonContent = (
-      <>
+      <div className="flex items-center justify-center gap-3">
         {Icon && iconPosition === "left" && (
-          <div className="flex items-center border-r border-current/30 mr-4">
-            <div className="mr-4 overflow-hidden">
-              <Icon
-                className={cn(
-                  iconVariants({
-                    variant,
-                    size,
-                    responsive,
-                    iconAnimate: disabled ? "none" : iconAnimate,
-                  })
-                )}
-              />
-            </div>
+          <div className="flex items-center justify-center shrink-0 pr-3 border-r border-current/30">
+            <Icon
+              className={cn(
+                iconVariants({
+                  variant,
+                  size,
+                  responsive,
+                  iconAnimate: disabled ? "none" : iconAnimate,
+                })
+              )}
+            />
           </div>
         )}
-        <span className="w-full text-center px-2">{children}</span>
+        <span className="text-center">{children}</span>
         {Icon && iconPosition === "right" && (
-          <div className="flex items-center border-l border-current/30">
-            <div className="ml-4 overflow-hidden">
-              <Icon
-                className={cn(
-                  iconVariants({
-                    variant,
-                    size,
-                    responsive,
-                    iconAnimate: disabled ? "none" : iconAnimate,
-                  })
-                )}
-              />
-            </div>
+          <div className="flex items-center justify-center shrink-0 pl-3 border-l border-current/30">
+            <Icon
+              className={cn(
+                iconVariants({
+                  variant,
+                  size,
+                  responsive,
+                  iconAnimate: disabled ? "none" : iconAnimate,
+                })
+              )}
+            />
           </div>
         )}
-      </>
+      </div>
     );
 
     if (href && !disabled) {
