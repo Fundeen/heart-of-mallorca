@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Euro } from "lucide-react";
+import { FileText, Euro } from "lucide-react";
 import heroImage from "@/assets/hero-solar-mallorca.jpg";
 import { FundeenButton } from "@/components/ui/fundeen-button";
+
+// HubSpot Landing Page URL - Replace with your actual HubSpot landing page
+const HUBSPOT_LANDING_URL = "https://share.hsforms.com/YOUR_FORM_ID";
 
 const CTASection = () => {
   return (
@@ -54,7 +57,7 @@ const CTASection = () => {
           </FundeenButton>
 
           <FundeenButton
-            href="https://fundeen.com/proyecto/son-ripollet"
+            href={HUBSPOT_LANDING_URL}
             variant="colorFull"
             size="xl"
             icon={Euro}
@@ -62,7 +65,7 @@ const CTASection = () => {
             iconAnimate="none"
             className="animate-pulse-glow"
           >
-            Participar desde 500€
+            Reservar mi plaza
           </FundeenButton>
         </motion.div>
       </div>
