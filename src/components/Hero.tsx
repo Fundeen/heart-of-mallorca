@@ -1,46 +1,57 @@
 import { motion } from "framer-motion";
 import { Play, ArrowDown } from "lucide-react";
-import heroImage from "@/assets/hero-solar-mallorca.jpg";
+import videoThumbnail from "@/assets/hero-solar-mallorca.jpg";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="Planta solar Son Ripollet en Mallorca"
-          className="w-full h-full object-cover"
+      {/* Warm Mediterranean Gradient Background */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          background: `linear-gradient(135deg, 
+            hsl(35 30% 92%) 0%, 
+            hsl(20 45% 85%) 30%, 
+            hsl(35 35% 88%) 60%, 
+            hsl(90 20% 85%) 100%)`
+        }}
+      >
+        {/* Subtle warm glow overlays */}
+        <div 
+          className="absolute inset-0 opacity-40"
+          style={{
+            background: `radial-gradient(circle at 25% 30%, hsl(35 60% 70% / 0.5) 0%, transparent 50%),
+                         radial-gradient(circle at 75% 70%, hsl(20 50% 65% / 0.4) 0%, transparent 45%)`
+          }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-foreground/40 via-foreground/30 to-foreground/60" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 container-narrow text-center pt-24 pb-16">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
         >
-          <span className="inline-block text-caption text-primary-foreground/80 mb-6">
+          <span className="inline-block text-caption text-foreground/70 mb-6">
             Son Ripollet · Mallorca
           </span>
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-editorial-xl text-primary-foreground mb-8 text-balance"
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-editorial-xl text-foreground mb-8 text-balance"
         >
           Cuidar lo que es nuestro es invertir en el futuro
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-body-lg text-primary-foreground/90 max-w-2xl mx-auto mb-10"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-body-lg text-foreground/80 max-w-2xl mx-auto mb-10"
         >
           Un proyecto de energía solar en el corazón de Mallorca. 
           Una oportunidad para formar parte de algo real, cercano y compartido.
@@ -48,18 +59,18 @@ const Hero = () => {
 
         {/* Campaign Video */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.7 }}
-          className="relative max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="relative max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-elegant group cursor-pointer border border-foreground/10"
         >
-          <div className="aspect-video bg-foreground/20 backdrop-blur-sm">
+          <div className="aspect-video bg-foreground/5">
             <img
-              src={heroImage}
+              src={videoThumbnail}
               alt="Video de campaña Son Ripollet"
-              className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
             
             {/* Play button */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -82,9 +93,9 @@ const Hero = () => {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.9 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
         >
           <a
             href="#historia"
@@ -100,13 +111,13 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
+        transition={{ delay: 0.8, duration: 0.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2 }}
-          className="flex flex-col items-center gap-2 text-primary-foreground/70"
+          className="flex flex-col items-center gap-2 text-foreground/50"
         >
           <span className="text-xs uppercase tracking-widest">Scroll</span>
           <ArrowDown size={20} />
