@@ -238,14 +238,13 @@ const VideoHub = () => {
           </p>
         </motion.div>
 
-        {/* Investor videos - alternating layout */}
-        <div className="space-y-16">
+        {/* Investor videos - same style as main */}
+        <div className="space-y-24 md:space-y-32">
           {investorVideos.map((video, index) => (
             <VideoCard
               key={index + 2}
-              index={index}
+              index={index + 2}
               {...video}
-              compact
             />
           ))}
         </div>
