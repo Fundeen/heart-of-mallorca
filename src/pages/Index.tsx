@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ContactForm from "@/components/ContactForm";
 import EventBanner from "@/components/EventBanner";
 import StorySection from "@/components/StorySection";
 import VideoHub from "@/components/VideoHub";
@@ -15,6 +16,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
+        <ContactForm />
         <EventBanner />
         <StorySection />
         <VideoHub />
