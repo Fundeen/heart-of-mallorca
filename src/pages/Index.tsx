@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ContactForm from "@/components/ContactForm";
 import EventBanner from "@/components/EventBanner";
@@ -8,12 +7,10 @@ import EmotionalJourney from "@/components/EmotionalJourney";
 import TestimonialSection from "@/components/TestimonialSection";
 import EventSection from "@/components/EventSection";
 import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       <main>
         <Hero />
         <EventBanner />
@@ -25,7 +22,6 @@ const Index = () => {
         <EventSection />
         <CTASection />
       </main>
-      <Footer />
     </div>
   );
 };
