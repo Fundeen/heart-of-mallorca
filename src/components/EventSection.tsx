@@ -4,7 +4,7 @@ import eventImage from "@/assets/event-community.jpg";
 
 const EventSection = () => {
   return (
-    <section id="evento" className="section-padding bg-background">
+    <section id="evento" className="section-padding">
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Image */}
@@ -15,7 +15,7 @@ const EventSection = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-golden/20 rounded-3xl blur-2xl" />
+            <div className="absolute -inset-4 bg-gradient-to-br from-white/20 to-white/10 rounded-3xl blur-2xl" />
             <img
               src={eventImage}
               alt="Evento de inversores en Mallorca"
@@ -43,39 +43,39 @@ const EventSection = () => {
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
-              <div className="flex items-center gap-3 p-4 bg-card rounded-xl">
-                <Calendar size={20} className="text-primary" />
+              <div className="flex items-center gap-3 p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                <Calendar size={20} className="text-white" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Fecha</p>
-                  <p className="font-medium text-foreground">15 Febrero 2026</p>
+                  <p className="text-sm text-white/70">Fecha</p>
+                  <p className="font-medium text-white">15 Febrero 2026</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 bg-card rounded-xl">
-                <MapPin size={20} className="text-primary" />
+              <div className="flex items-center gap-3 p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                <MapPin size={20} className="text-white" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Lugar</p>
-                  <p className="font-medium text-foreground">Palma de Mallorca</p>
+                  <p className="text-sm text-white/70">Lugar</p>
+                  <p className="font-medium text-white">Palma de Mallorca</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 bg-card rounded-xl">
-                <Clock size={20} className="text-primary" />
+              <div className="flex items-center gap-3 p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                <Clock size={20} className="text-white" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Horario</p>
-                  <p className="font-medium text-foreground">18:00 - 21:00h</p>
+                  <p className="text-sm text-white/70">Horario</p>
+                  <p className="font-medium text-white">18:00 - 21:00h</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 p-4 bg-card rounded-xl">
-                <Users size={20} className="text-primary" />
+              <div className="flex items-center gap-3 p-4 bg-white/20 backdrop-blur-sm rounded-xl">
+                <Users size={20} className="text-white" />
                 <div>
-                  <p className="text-sm text-muted-foreground">Aforo</p>
-                  <p className="font-medium text-foreground">Limitado</p>
+                  <p className="text-sm text-white/70">Aforo</p>
+                  <p className="font-medium text-white">Limitado</p>
                 </div>
               </div>
             </div>
 
             <a
               href="#"
-              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-coral-dark rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Reservar mi plaza
             </a>

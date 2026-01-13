@@ -12,7 +12,18 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+      className="min-h-screen"
+      style={{
+        background: `linear-gradient(180deg, 
+          hsl(10 80% 70%) 0%, 
+          hsl(15 85% 72%) 20%,
+          hsl(20 90% 75%) 40%,
+          hsl(25 95% 75%) 60%,
+          hsl(30 90% 72%) 80%,
+          hsl(15 80% 65%) 100%)`
+      }}
+    >
       <Header />
       <main>
         <Hero />

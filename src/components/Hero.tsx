@@ -5,25 +5,6 @@ import videoThumbnail from "@/assets/hero-solar-mallorca.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-      {/* Warm Mediterranean Gradient Background */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          background: `linear-gradient(135deg, 
-            hsl(35 30% 92%) 0%, 
-            hsl(20 45% 85%) 30%, 
-            hsl(35 35% 88%) 60%, 
-            hsl(90 20% 85%) 100%)`
-        }}
-      >
-        <div 
-          className="absolute inset-0 opacity-40"
-          style={{
-            background: `radial-gradient(circle at 25% 30%, hsl(35 60% 70% / 0.5) 0%, transparent 50%),
-                         radial-gradient(circle at 75% 70%, hsl(20 50% 65% / 0.4) 0%, transparent 45%)`
-          }}
-        />
-      </div>
 
       {/* Content */}
       <div className="relative z-10 container-narrow text-center pt-24 pb-8">
