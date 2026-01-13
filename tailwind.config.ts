@@ -79,8 +79,11 @@ export default {
         golden: "hsl(var(--golden))",
       },
       fontFamily: {
-        serif: ["Cormorant Garamond", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        serif: ["StratosBold", "Georgia", "serif"],
+        sans: ["StratosRegular", "system-ui", "sans-serif"],
+        "stratos-light": ["StratosLight", "sans-serif"],
+        "stratos-medium": ["StratosMedium", "sans-serif"],
+        "stratos-bold": ["StratosBold", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
