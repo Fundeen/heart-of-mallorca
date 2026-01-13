@@ -1,5 +1,7 @@
-import { motion } from "framer-motion";
-import { Play, User } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Play, User, X } from "lucide-react";
+import ReactPlayer from "react-player";
 import personNacho from "@/assets/person-nacho.jpg";
 import personMarta from "@/assets/person-marta.jpg";
 import personPere from "@/assets/person-pere.jpg";
@@ -14,12 +16,14 @@ interface VideoCardProps {
   duration: string;
   thumbnail: string;
   description: string;
+  youtubeUrl: string;
   index: number;
   featured?: boolean;
   compact?: boolean;
+  onPlay: (url: string) => void;
 }
 
-const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, index, featured, compact }: VideoCardProps) => {
+const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, youtubeUrl, index, featured, compact, onPlay }: VideoCardProps) => {
   if (compact) {
     return (
       <motion.div
@@ -31,7 +35,10 @@ const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, in
       >
         <div className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-6 md:gap-10 items-center`}>
           {/* Video thumbnail */}
-          <div className="relative w-full md:w-1/2 aspect-video rounded-xl overflow-hidden cursor-pointer shadow-lg">
+          <div 
+            className="relative w-full md:w-1/2 aspect-video rounded-xl overflow-hidden cursor-pointer shadow-lg"
+            onClick={() => onPlay(youtubeUrl)}
+          >
             <img
               src={thumbnail}
               alt={title}
@@ -85,7 +92,10 @@ const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, in
     >
       <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-16 items-center`}>
         {/* Video thumbnail */}
-        <div className={`relative w-full ${featured ? 'lg:w-2/3' : 'lg:w-3/5'} aspect-video rounded-2xl overflow-hidden cursor-pointer shadow-xl`}>
+        <div 
+          className={`relative w-full ${featured ? 'lg:w-2/3' : 'lg:w-3/5'} aspect-video rounded-2xl overflow-hidden cursor-pointer shadow-xl`}
+          onClick={() => onPlay(youtubeUrl)}
+        >
           <img
             src={thumbnail}
             alt={title}
@@ -123,7 +133,10 @@ const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, in
           <p className="text-body text-muted-foreground mb-6 leading-relaxed">
             {description}
           </p>
-          <button className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 text-primary font-medium rounded-full hover:bg-primary/20 transition-all duration-300">
+          <button 
+            onClick={() => onPlay(youtubeUrl)}
+            className="inline-flex items-center gap-3 px-6 py-3 bg-primary/10 text-primary font-medium rounded-full hover:bg-primary/20 transition-all duration-300"
+          >
             <Play size={18} fill="currentColor" />
             Ver historia
           </button>
@@ -134,6 +147,8 @@ const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, in
 };
 
 const VideoHub = () => {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
   const videos = [
     {
       title: "Por qué creamos Fundeen",
@@ -142,6 +157,7 @@ const VideoHub = () => {
       duration: "4:15 min",
       thumbnail: personNacho,
       description: "Nacho comparte la visión detrás de Fundeen: democratizar la inversión en renovables y conectar a las personas con proyectos que generan impacto real en sus territorios.",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Reemplazar con URL real
       featured: true,
     },
     {
@@ -151,6 +167,7 @@ const VideoHub = () => {
       duration: "3:45 min",
       thumbnail: personMarta,
       description: "Marta, desde Sampol, explica por qué Son Ripollet representa un modelo diferente de desarrollo energético: integrado en el paisaje, cercano a la comunidad y con vocación de permanencia.",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Reemplazar con URL real
       featured: true,
     },
     {
@@ -160,6 +177,7 @@ const VideoHub = () => {
       duration: "2:50 min",
       thumbnail: personPere,
       description: "Pere cuenta cómo decidió dar el paso hacia la inversión en renovables cerca de su pueblo, y qué significa para él ver las placas cada vez que pasa por la carretera.",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Reemplazar con URL real
     },
     {
       title: "Invertir donde puedo verlo",
@@ -168,6 +186,7 @@ const VideoHub = () => {
       duration: "3:10 min",
       thumbnail: personMaria,
       description: "Maria Antònia eligió proyectos locales porque quería sentir que su dinero trabajaba en algo tangible. Hoy visita las plantas con su familia.",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Reemplazar con URL real
     },
     {
       title: "El futuro está aquí",
@@ -176,6 +195,7 @@ const VideoHub = () => {
       duration: "2:40 min",
       thumbnail: personTomeu,
       description: "Tomeu lleva tres años invirtiendo en proyectos de Fundeen. Explica cómo ha cambiado su forma de entender el ahorro y la inversión.",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Reemplazar con URL real
     },
     {
       title: "Una decisión en familia",
@@ -184,6 +204,7 @@ const VideoHub = () => {
       duration: "3:25 min",
       thumbnail: personCatalina,
       description: "Catalina decidió invertir junto a sus hijos como una forma de enseñarles que el dinero puede tener un propósito. Hoy lo consideran un proyecto familiar.",
+      youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Reemplazar con URL real
     },
   ];
 
@@ -191,69 +212,108 @@ const VideoHub = () => {
   const investorVideos = videos.slice(2);
 
   return (
-    <section id="voces" className="section-padding bg-card">
-      <div className="container-narrow">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-20"
-        >
-          <span className="text-caption text-primary mb-4 block">
-            Las voces del proyecto
-          </span>
-          <h2 className="text-editorial-lg text-foreground mb-6">
-            Historias que importan
-          </h2>
-          <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
-            Detrás de cada proyecto hay personas. Conoce a quienes hacen posible 
-            Son Ripollet y a inversores que ya forman parte de esta comunidad.
-          </p>
-        </motion.div>
+    <>
+      {/* Video Modal */}
+      <AnimatePresence>
+        {activeVideo && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/90 backdrop-blur-sm p-4"
+            onClick={() => setActiveVideo(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full max-w-5xl aspect-video rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <ReactPlayer
+                src={activeVideo}
+                style={{ width: '100%', height: '100%' }}
+                playing
+                controls
+              />
+              <button
+                onClick={() => setActiveVideo(null)}
+                className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-full text-foreground hover:bg-background transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        {/* Main videos - Nacho & Marta */}
-        <div className="space-y-24 md:space-y-32 mb-24">
-          {mainVideos.map((video, index) => (
-            <VideoCard
-              key={index}
-              index={index}
-              {...video}
-            />
-          ))}
+      <section id="voces" className="section-padding bg-card">
+        <div className="container-narrow">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <span className="text-caption text-primary mb-4 block">
+              Las voces del proyecto
+            </span>
+            <h2 className="text-editorial-lg text-foreground mb-6">
+              Historias que importan
+            </h2>
+            <p className="text-body-lg text-muted-foreground max-w-2xl mx-auto">
+              Detrás de cada proyecto hay personas. Conoce a quienes hacen posible 
+              Son Ripollet y a inversores que ya forman parte de esta comunidad.
+            </p>
+          </motion.div>
+
+          {/* Main videos - Nacho & Marta */}
+          <div className="space-y-24 md:space-y-32 mb-24">
+            {mainVideos.map((video, index) => (
+              <VideoCard
+                key={index}
+                index={index}
+                onPlay={setActiveVideo}
+                {...video}
+              />
+            ))}
+          </div>
+
+          {/* Investor videos section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <span className="text-caption text-primary mb-3 block">
+              Testimonios reales
+            </span>
+            <h3 className="text-editorial-md text-foreground mb-4">
+              Inversores que ya forman parte
+            </h3>
+            <p className="text-body text-muted-foreground max-w-xl mx-auto">
+              Personas como tú que decidieron dar el paso en otros proyectos de inversión local.
+            </p>
+          </motion.div>
+
+          {/* Investor videos - same style as main */}
+          <div className="space-y-24 md:space-y-32">
+            {investorVideos.map((video, index) => (
+              <VideoCard
+                key={index + 2}
+                index={index + 2}
+                onPlay={setActiveVideo}
+                {...video}
+              />
+            ))}
+          </div>
         </div>
-
-        {/* Investor videos section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        >
-          <span className="text-caption text-primary mb-3 block">
-            Testimonios reales
-          </span>
-          <h3 className="text-editorial-md text-foreground mb-4">
-            Inversores que ya forman parte
-          </h3>
-          <p className="text-body text-muted-foreground max-w-xl mx-auto">
-            Personas como tú que decidieron dar el paso en otros proyectos de inversión local.
-          </p>
-        </motion.div>
-
-        {/* Investor videos - same style as main */}
-        <div className="space-y-24 md:space-y-32">
-          {investorVideos.map((video, index) => (
-            <VideoCard
-              key={index + 2}
-              index={index + 2}
-              {...video}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
