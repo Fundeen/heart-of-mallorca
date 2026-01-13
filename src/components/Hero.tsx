@@ -4,7 +4,7 @@ import videoThumbnail from "@/assets/hero-solar-mallorca.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Warm Mediterranean Gradient Background */}
       <div 
         className="absolute inset-0 z-0"
@@ -26,7 +26,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container-narrow text-center pt-24 pb-16">
+      <div className="relative z-10 container-narrow text-center pt-24 pb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="relative z-10 mt-12 mb-8 flex justify-center"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
