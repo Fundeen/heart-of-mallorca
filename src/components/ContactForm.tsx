@@ -7,6 +7,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 
+// HubSpot Configuration - Replace with your actual values
+const HUBSPOT_PORTAL_ID = "YOUR_PORTAL_ID"; // e.g., "8765432"
+const HUBSPOT_FORM_GUID = "YOUR_FORM_GUID"; // e.g., "7654abcd-123a-231b-555c-12345678abc"
+
 const ContactForm = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -23,20 +27,58 @@ const ContactForm = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const submitToHubSpot = async () => {
+    const submitURL = `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_GUID}`;
+    
+    const response = await fetch(submitURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        portalId: HUBSPOT_PORTAL_ID,
+        formGuid: HUBSPOT_FORM_GUID,
+        fields: [
+          { name: "firstname", value: formData.name },
+          { name: "email", value: formData.email },
+          { name: "phone", value: formData.phone },
+          { name: "message", value: formData.message },
+        ],
+        context: {
+          pageUri: window.location.href,
+          pageName: document.title,
+        },
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Error al enviar el formulario");
+    }
+
+    return response.json();
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    
-    toast({
-      title: "¡Mensaje enviado!",
-      description: "Nos pondremos en contacto contigo pronto.",
-    });
+    try {
+      await submitToHubSpot();
+      setIsSubmitted(true);
+      toast({
+        title: "¡Mensaje enviado!",
+        description: "Nos pondremos en contacto contigo pronto.",
+      });
+    } catch (error) {
+      console.error("HubSpot submission error:", error);
+      toast({
+        title: "Error al enviar",
+        description: "Por favor, inténtalo de nuevo más tarde.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (isSubmitted) {
