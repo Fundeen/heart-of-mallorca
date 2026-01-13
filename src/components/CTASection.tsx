@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, FileText, Euro } from "lucide-react";
 import heroImage from "@/assets/hero-solar-mallorca.jpg";
+import { FundeenButton } from "@/components/ui/fundeen-button";
 
 const CTASection = () => {
   return (
@@ -39,47 +40,30 @@ const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
-          {/* Option 1: Learn more */}
-          <a
-            href="#"
-            className="group bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-2xl p-8 text-left transition-all duration-300 hover:bg-primary-foreground/20 hover:border-primary-foreground/40"
+          <FundeenButton
+            href="https://fundeen.com/proyecto/son-ripollet"
+            variant="secondaryLight"
+            size="xl"
+            icon={FileText}
+            iconPosition="left"
+            iconAnimate="none"
           >
-            <div className="w-14 h-14 flex items-center justify-center bg-primary-foreground/20 rounded-xl mb-6">
-              <FileText size={24} className="text-primary-foreground" />
-            </div>
-            <h3 className="font-serif text-xl text-primary-foreground mb-3">
-              Descubrir el proyecto
-            </h3>
-            <p className="text-sm text-primary-foreground/70 mb-4">
-              Accede a toda la información financiera y técnica del proyecto.
-            </p>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground group-hover:gap-3 transition-all">
-              Ver landing técnica
-              <ArrowRight size={16} />
-            </span>
-          </a>
+            Descubrir el proyecto
+          </FundeenButton>
 
-          {/* Option 2: Invest */}
-          <a
-            href="#"
-            className="group bg-primary rounded-2xl p-8 text-left transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-pulse-glow"
+          <FundeenButton
+            href="https://fundeen.com/proyecto/son-ripollet"
+            variant="colorFull"
+            size="xl"
+            icon={Euro}
+            iconPosition="left"
+            iconAnimate="none"
+            className="animate-pulse-glow"
           >
-            <div className="w-14 h-14 flex items-center justify-center bg-primary-foreground/20 rounded-xl mb-6">
-              <Euro size={24} className="text-primary-foreground" />
-            </div>
-            <h3 className="font-serif text-xl text-primary-foreground mb-3">
-              Participar desde 500€
-            </h3>
-            <p className="text-sm text-primary-foreground/80 mb-4">
-              Regístrate o accede a tu cuenta para empezar a invertir hoy.
-            </p>
-            <span className="inline-flex items-center gap-2 text-sm font-medium text-primary-foreground group-hover:gap-3 transition-all">
-              Invertir ahora
-              <ArrowRight size={16} />
-            </span>
-          </a>
+            Participar desde 500€
+          </FundeenButton>
         </motion.div>
       </div>
     </section>
