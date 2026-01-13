@@ -25,34 +25,40 @@ const VideoCard = ({ title, subtitle, role, duration, thumbnail, description, in
         transition={{ duration: 0.6, delay: index * 0.1 }}
         className="group cursor-pointer"
       >
-        <div className="relative aspect-video rounded-xl overflow-hidden shadow-lg">
-          <img
-            src={thumbnail}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
-          
-          {/* Play button */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-12 h-12 flex items-center justify-center bg-primary rounded-full transition-all duration-300 group-hover:scale-110 shadow-lg">
-              <Play size={20} className="text-primary-foreground ml-0.5" fill="currentColor" />
+        <div className="flex flex-col sm:flex-row gap-5 items-start">
+          {/* Video thumbnail */}
+          <div className="relative w-full sm:w-2/5 aspect-video rounded-xl overflow-hidden shadow-lg flex-shrink-0">
+            <img
+              src={thumbnail}
+              alt={title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/30 to-transparent" />
+            
+            {/* Play button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-12 h-12 flex items-center justify-center bg-primary rounded-full transition-all duration-300 group-hover:scale-110 shadow-lg">
+                <Play size={20} className="text-primary-foreground ml-0.5" fill="currentColor" />
+              </div>
+            </div>
+
+            {/* Duration */}
+            <div className="absolute bottom-2 right-2 px-2 py-1 bg-foreground/70 backdrop-blur-sm rounded-full">
+              <span className="text-xs text-primary-foreground">{duration}</span>
+            </div>
+
+            {/* Role badge */}
+            <div className="absolute top-2 left-2 px-2 py-1 bg-primary/90 rounded-full">
+              <span className="text-xs uppercase tracking-wider text-primary-foreground font-medium">{role}</span>
             </div>
           </div>
 
-          {/* Duration */}
-          <div className="absolute bottom-3 right-3 px-2 py-1 bg-foreground/70 backdrop-blur-sm rounded-full">
-            <span className="text-xs text-primary-foreground">{duration}</span>
+          {/* Content */}
+          <div className="flex-1">
+            <h4 className="font-serif text-xl text-foreground mb-1">{title}</h4>
+            <p className="text-sm text-primary mb-3">{subtitle}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
           </div>
-
-          {/* Role badge */}
-          <div className="absolute top-3 left-3 px-2 py-1 bg-primary/90 rounded-full">
-            <span className="text-xs uppercase tracking-wider text-primary-foreground font-medium">{role}</span>
-          </div>
-        </div>
-        <div className="mt-4 text-center">
-          <h4 className="font-serif text-lg text-foreground mb-1">{title}</h4>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
         </div>
       </motion.div>
     );
@@ -225,8 +231,8 @@ const VideoHub = () => {
           </p>
         </motion.div>
 
-        {/* Investor videos grid - compact */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Investor videos grid - 2 columns with descriptions */}
+        <div className="grid md:grid-cols-2 gap-8">
           {investorVideos.map((video, index) => (
             <VideoCard
               key={index + 2}
