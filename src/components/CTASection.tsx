@@ -43,7 +43,7 @@ const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4 sm:px-0"
         >
           <FundeenButton
             href="https://fundeen.com/proyecto/son-ripollet"
