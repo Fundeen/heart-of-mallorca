@@ -64,7 +64,7 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
         >
           <a
-            href="#historia"
+            href="#contacto"
             className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg text-lg"
           >
             Quiero saber más
