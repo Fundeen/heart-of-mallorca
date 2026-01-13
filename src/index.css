@@ -9,100 +9,100 @@
 
 @layer base {
   :root {
-    /* Mediterranean Warm Palette */
-    --background: 40 33% 98%;
-    --foreground: 220 20% 18%;
+    /* Coral/Salmon Warm Palette - Fundeen Style */
+    --background: 10 100% 75%;
+    --foreground: 0 0% 100%;
 
-    --card: 40 25% 96%;
-    --card-foreground: 220 20% 18%;
+    --card: 15 95% 70%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 40 33% 98%;
-    --popover-foreground: 220 20% 18%;
+    --popover: 10 100% 75%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Terracotta/Coral - Warmth, Mediterranean earth */
-    --primary: 15 75% 55%;
-    --primary-foreground: 40 33% 98%;
+    /* Coral/Salmon - Main brand color */
+    --primary: 0 0% 100%;
+    --primary-foreground: 10 80% 55%;
 
-    /* Sage Green - Sustainability, nature */
-    --secondary: 150 25% 45%;
-    --secondary-foreground: 40 33% 98%;
+    /* White buttons on coral */
+    --secondary: 25 100% 65%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Warm cream for muted areas */
-    --muted: 40 30% 92%;
-    --muted-foreground: 220 15% 40%;
+    /* Muted coral */
+    --muted: 15 90% 72%;
+    --muted-foreground: 0 0% 100%;
 
-    /* Golden accent - Sun, warmth */
-    --accent: 38 92% 55%;
-    --accent-foreground: 220 20% 18%;
+    /* Orange accent */
+    --accent: 30 100% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 40 33% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 15 75% 55%;
+    --border: 15 60% 80%;
+    --input: 0 0% 100%;
+    --ring: 10 80% 55%;
 
-    --radius: 0.75rem;
+    --radius: 1.5rem;
 
     /* Custom colors for storytelling */
-    --terracotta: 15 75% 55%;
-    --terracotta-light: 15 70% 65%;
-    --terracotta-dark: 15 80% 40%;
-    --sage: 150 25% 45%;
-    --sage-light: 150 20% 60%;
-    --cream: 40 33% 98%;
-    --cream-dark: 40 25% 92%;
+    --coral: 10 80% 65%;
+    --coral-light: 15 95% 75%;
+    --coral-dark: 5 75% 55%;
+    --salmon: 15 90% 70%;
+    --peach: 25 100% 80%;
+    --cream: 40 100% 97%;
+    --cream-dark: 35 80% 90%;
     --navy: 220 35% 22%;
-    --golden: 38 92% 55%;
+    --golden: 35 100% 60%;
 
     /* Sidebar */
-    --sidebar-background: 40 33% 98%;
-    --sidebar-foreground: 220 20% 18%;
-    --sidebar-primary: 15 75% 55%;
-    --sidebar-primary-foreground: 40 33% 98%;
-    --sidebar-accent: 40 30% 92%;
-    --sidebar-accent-foreground: 220 20% 18%;
-    --sidebar-border: 40 20% 88%;
-    --sidebar-ring: 15 75% 55%;
+    --sidebar-background: 10 100% 75%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 10 80% 55%;
+    --sidebar-accent: 15 90% 72%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 15 60% 80%;
+    --sidebar-ring: 10 80% 55%;
   }
 
   .dark {
-    --background: 220 25% 10%;
-    --foreground: 40 20% 95%;
+    --background: 10 70% 20%;
+    --foreground: 0 0% 95%;
 
-    --card: 220 25% 14%;
-    --card-foreground: 40 20% 95%;
+    --card: 10 60% 25%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 25% 10%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 10 70% 20%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 15 70% 60%;
-    --primary-foreground: 220 25% 10%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 10 80% 55%;
 
-    --secondary: 150 25% 40%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 25 80% 50%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 25% 18%;
-    --muted-foreground: 40 15% 65%;
+    --muted: 10 50% 30%;
+    --muted-foreground: 0 0% 80%;
 
-    --accent: 38 85% 55%;
-    --accent-foreground: 220 25% 10%;
+    --accent: 30 90% 55%;
+    --accent-foreground: 0 0% 95%;
 
     --destructive: 0 62% 30%;
-    --destructive-foreground: 40 20% 95%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 220 25% 20%;
-    --input: 220 25% 20%;
-    --ring: 15 70% 60%;
+    --border: 10 40% 35%;
+    --input: 10 40% 35%;
+    --ring: 10 70% 60%;
 
-    --sidebar-background: 220 25% 10%;
-    --sidebar-foreground: 40 20% 95%;
-    --sidebar-primary: 15 70% 60%;
-    --sidebar-primary-foreground: 220 25% 10%;
-    --sidebar-accent: 220 25% 18%;
-    --sidebar-accent-foreground: 40 20% 95%;
-    --sidebar-border: 220 25% 20%;
-    --sidebar-ring: 15 70% 60%;
+    --sidebar-background: 10 70% 20%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 10 80% 55%;
+    --sidebar-accent: 10 50% 30%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 10 40% 35%;
+    --sidebar-ring: 10 70% 60%;
   }
 }
 
@@ -157,17 +157,17 @@
     @apply text-sm uppercase tracking-widest font-medium;
   }
 
-  /* Button variants for storytelling */
+  /* Button variants for storytelling - Coral style */
   .btn-primary {
-    @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg;
+    @apply inline-flex items-center justify-center px-8 py-4 bg-white text-coral-dark rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-foreground text-foreground rounded-full font-medium transition-all duration-300 hover:bg-foreground hover:text-background;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-full font-semibold transition-all duration-300 hover:bg-white hover:text-coral-dark;
   }
 
   .btn-outline-light {
-    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-primary-foreground text-primary-foreground rounded-full font-medium transition-all duration-300 hover:bg-primary-foreground hover:text-primary;
+    @apply inline-flex items-center justify-center px-8 py-4 border-2 border-white/50 text-white rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-coral-dark;
   }
 
   /* Section styles */
