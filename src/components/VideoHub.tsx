@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
 import { Play, User } from "lucide-react";
-import solarDetail from "@/assets/solar-panels-detail.jpg";
-import mallorcaLandscape from "@/assets/mallorca-landscape.jpg";
+import personNacho from "@/assets/person-nacho.jpg";
+import personMarta from "@/assets/person-marta.jpg";
+import personPere from "@/assets/person-pere.jpg";
+import personMaria from "@/assets/person-maria.jpg";
+import personTomeu from "@/assets/person-tomeu.jpg";
+import personCatalina from "@/assets/person-catalina.jpg";
 
 interface VideoCardProps {
   title: string;
@@ -136,7 +140,7 @@ const VideoHub = () => {
       subtitle: "Nacho Pinedo · Fundador",
       role: "Fundeen",
       duration: "4:15 min",
-      thumbnail: solarDetail,
+      thumbnail: personNacho,
       description: "Nacho comparte la visión detrás de Fundeen: democratizar la inversión en renovables y conectar a las personas con proyectos que generan impacto real en sus territorios.",
       featured: true,
     },
@@ -145,7 +149,7 @@ const VideoHub = () => {
       subtitle: "Marta García · Directora de Proyecto",
       role: "Sampol",
       duration: "3:45 min",
-      thumbnail: mallorcaLandscape,
+      thumbnail: personMarta,
       description: "Marta, desde Sampol, explica por qué Son Ripollet representa un modelo diferente de desarrollo energético: integrado en el paisaje, cercano a la comunidad y con vocación de permanencia.",
       featured: true,
     },
@@ -154,7 +158,7 @@ const VideoHub = () => {
       subtitle: "Pere Torrens · Inversor en Mallorca",
       role: "Inversor",
       duration: "2:50 min",
-      thumbnail: solarDetail,
+      thumbnail: personPere,
       description: "Pere cuenta cómo decidió dar el paso hacia la inversión en renovables cerca de su pueblo, y qué significa para él ver las placas cada vez que pasa por la carretera.",
     },
     {
@@ -162,7 +166,7 @@ const VideoHub = () => {
       subtitle: "Maria Antònia Vidal · Inversora",
       role: "Inversora",
       duration: "3:10 min",
-      thumbnail: mallorcaLandscape,
+      thumbnail: personMaria,
       description: "Maria Antònia eligió proyectos locales porque quería sentir que su dinero trabajaba en algo tangible. Hoy visita las plantas con su familia.",
     },
     {
@@ -170,7 +174,7 @@ const VideoHub = () => {
       subtitle: "Tomeu Riera · Inversor desde 2021",
       role: "Inversor",
       duration: "2:40 min",
-      thumbnail: solarDetail,
+      thumbnail: personTomeu,
       description: "Tomeu lleva tres años invirtiendo en proyectos de Fundeen. Explica cómo ha cambiado su forma de entender el ahorro y la inversión.",
     },
     {
@@ -178,7 +182,7 @@ const VideoHub = () => {
       subtitle: "Catalina Mas · Inversora",
       role: "Inversora",
       duration: "3:25 min",
-      thumbnail: mallorcaLandscape,
+      thumbnail: personCatalina,
       description: "Catalina decidió invertir junto a sus hijos como una forma de enseñarles que el dinero puede tener un propósito. Hoy lo consideran un proyecto familiar.",
     },
   ];
