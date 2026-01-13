@@ -40,29 +40,58 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-body-lg text-primary-foreground/90 max-w-2xl mx-auto mb-12"
+          className="text-body-lg text-primary-foreground/90 max-w-2xl mx-auto mb-10"
         >
           Un proyecto de energía solar en el corazón de Mallorca. 
           Una oportunidad para formar parte de algo real, cercano y compartido.
         </motion.p>
 
+        {/* Campaign Video */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          transition={{ duration: 0.8, delay: 0.7 }}
+          className="relative max-w-3xl mx-auto mb-10 rounded-2xl overflow-hidden shadow-2xl group cursor-pointer"
         >
-          <button className="group flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg">
-            <span className="w-10 h-10 flex items-center justify-center bg-primary-foreground rounded-full transition-transform group-hover:scale-110">
-              <Play size={18} className="text-primary ml-0.5" fill="currentColor" />
-            </span>
-            Ver la historia
-          </button>
+          <div className="aspect-video bg-foreground/20 backdrop-blur-sm">
+            <img
+              src={heroImage}
+              alt="Video de campaña Son Ripollet"
+              className="w-full h-full object-cover opacity-80 transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 via-transparent to-transparent" />
+            
+            {/* Play button */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center bg-primary-foreground/95 rounded-full transition-all duration-300 group-hover:scale-110 shadow-xl">
+                <Play size={32} className="text-primary ml-1" fill="currentColor" />
+              </div>
+            </div>
+
+            {/* Video label */}
+            <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6">
+              <span className="text-xs uppercase tracking-widest text-primary-foreground/70 mb-1 block">
+                Spot principal
+              </span>
+              <h3 className="font-serif text-lg md:text-xl text-primary-foreground">
+                Cuidar lo que es nuestro
+              </h3>
+              <span className="text-sm text-primary-foreground/60">2:30 min</span>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+        >
           <a
             href="#historia"
-            className="px-8 py-4 border-2 border-primary-foreground/80 text-primary-foreground rounded-full font-medium transition-all duration-300 hover:bg-primary-foreground hover:text-foreground"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg text-lg"
           >
-            Descubrir más
+            Quiero saber más
+            <ArrowDown size={20} />
           </a>
         </motion.div>
       </div>
@@ -71,7 +100,7 @@ const Hero = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 0.6 }}
+        transition={{ delay: 1.4, duration: 0.6 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <motion.div
