@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { Play, ArrowDown, ArrowRight } from "lucide-react";
+import { Play, ArrowDown, ArrowRight, Euro } from "lucide-react";
 import videoThumbnail from "@/assets/hero-solar-mallorca.jpg";
 import fundeenLogo from "@/assets/fundeen-logo.png";
 import { FundeenButton } from "@/components/ui/fundeen-button";
+
+// HubSpot Landing Page URL - Replace with your actual HubSpot landing page
+const HUBSPOT_LANDING_URL = "https://share.hsforms.com/YOUR_FORM_ID";
 
 const Hero = () => {
   return (
@@ -80,21 +83,23 @@ const Hero = () => {
           className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
         >
           <FundeenButton
-            href="#contacto"
+            href={HUBSPOT_LANDING_URL}
             variant="colorFull"
+            size="l"
+            icon={Euro}
+            iconPosition="left"
+            iconAnimate="none"
+          >
+            Reservar mi plaza
+          </FundeenButton>
+          <FundeenButton
+            href="#contacto"
+            variant="secondaryDark"
             size="l"
             icon={ArrowDown}
             iconAnimate="bottom"
           >
             Quiero saber más
-          </FundeenButton>
-          <FundeenButton
-            href="https://fundeen.com/proyecto/son-ripollet"
-            variant="secondaryDark"
-            size="l"
-            icon={ArrowRight}
-          >
-            Ver ficha técnica
           </FundeenButton>
         </motion.div>
 
