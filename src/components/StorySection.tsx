@@ -3,7 +3,7 @@ import mallorcaImage from "@/assets/mallorca-landscape.jpg";
 
 const StorySection = () => {
   return (
-    <section id="historia" className="section-padding bg-background">
+    <section id="historia" className="section-padding">
       <div className="container-wide">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Text Content */}
@@ -45,15 +45,15 @@ const StorySection = () => {
             className="order-1 lg:order-2"
           >
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-terracotta-light/20 to-sage/20 rounded-3xl blur-2xl" />
+              <div className="absolute -inset-4 bg-gradient-to-br from-white/20 to-white/10 rounded-3xl blur-2xl" />
               <img
                 src={mallorcaImage}
                 alt="Paisaje de Mallorca al atardecer"
                 className="relative rounded-2xl shadow-2xl w-full"
               />
-              <div className="absolute bottom-6 left-6 right-6 bg-background/90 backdrop-blur-sm rounded-xl p-4">
-                <p className="text-sm text-muted-foreground">
-                  <span className="font-medium text-foreground">Mallorca</span> — 
+              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl p-4">
+                <p className="text-sm text-coral-dark/70">
+                  <span className="font-medium text-coral-dark">Mallorca</span> — 
                   Donde la tradición se encuentra con la innovación
                 </p>
               </div>
