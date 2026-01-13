@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Play, ArrowDown, ArrowRight } from "lucide-react";
 import videoThumbnail from "@/assets/hero-solar-mallorca.jpg";
 import fundeenLogo from "@/assets/fundeen-logo.png";
+import { FundeenButton } from "@/components/ui/fundeen-button";
 
 const Hero = () => {
   return (
@@ -78,22 +79,23 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
         >
-          <a
+          <FundeenButton
             href="#contacto"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium transition-all duration-300 hover:scale-105 hover:shadow-xl shadow-lg text-lg"
+            variant="colorFull"
+            size="l"
+            icon={ArrowDown}
+            iconAnimate="bottom"
           >
             Quiero saber más
-            <ArrowDown size={20} />
-          </a>
-          <a
+          </FundeenButton>
+          <FundeenButton
             href="https://fundeen.com/proyecto/son-ripollet"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-foreground/10 text-foreground rounded-full font-medium transition-all duration-300 hover:bg-foreground/20 text-lg border border-foreground/20"
+            variant="secondaryDark"
+            size="l"
+            icon={ArrowRight}
           >
             Ver ficha técnica
-            <ArrowRight size={20} />
-          </a>
+          </FundeenButton>
         </motion.div>
 
         {/* Campaign Video - Hero Video */}
