@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Play, ArrowDown, ArrowRight } from "lucide-react";
 import videoThumbnail from "@/assets/hero-solar-mallorca.jpg";
+import fundeenLogo from "@/assets/fundeen-logo.png";
 
 const Hero = () => {
   return (
@@ -27,10 +28,24 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container-narrow text-center pt-24 pb-8">
+        {/* Fundeen Logo */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          className="mb-8"
+        >
+          <img 
+            src={fundeenLogo} 
+            alt="Fundeen" 
+            className="h-12 md:h-16 mx-auto"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
           <span className="inline-block text-caption text-foreground/70 mb-6">
             Son Ripollet · Mallorca
