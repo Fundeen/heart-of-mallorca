@@ -24,7 +24,7 @@ const testimonials = [
 
 const TestimonialSection = () => {
   return (
-    <section id="voces" className="section-padding">
+    <section id="voces" className="section-padding bg-card">
       <div className="container-wide">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -49,16 +49,16 @@ const TestimonialSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
-              className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 relative shadow-xl"
+              className="bg-background rounded-2xl p-8 relative"
             >
-              <Quote size={32} className="text-coral/30 absolute top-6 right-6" />
-              <blockquote className="font-serif text-lg text-coral-dark mb-6 leading-relaxed italic">
+              <Quote size={32} className="text-terracotta-light/30 absolute top-6 right-6" />
+              <blockquote className="font-serif text-lg text-foreground mb-6 leading-relaxed italic">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="border-t border-coral/20 pt-6">
-                <p className="font-medium text-coral-dark">{testimonial.name}</p>
-                <p className="text-sm text-coral-dark/70">{testimonial.role}</p>
-                <p className="text-xs text-coral mt-1">{testimonial.location}</p>
+              <div className="border-t border-border pt-6">
+                <p className="font-medium text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                <p className="text-xs text-primary mt-1">{testimonial.location}</p>
               </div>
             </motion.div>
           ))}

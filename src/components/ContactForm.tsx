@@ -41,15 +41,15 @@ const ContactForm = () => {
 
   if (isSubmitted) {
     return (
-      <section id="contacto" className="section-padding">
+      <section id="contacto" className="section-padding bg-muted/30">
         <div className="container-narrow">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="max-w-xl mx-auto text-center py-16"
           >
-            <div className="w-20 h-20 mx-auto bg-white/20 rounded-full flex items-center justify-center mb-6">
-              <CheckCircle size={40} className="text-white" />
+            <div className="w-20 h-20 mx-auto bg-primary/10 rounded-full flex items-center justify-center mb-6">
+              <CheckCircle size={40} className="text-primary" />
             </div>
             <h3 className="text-editorial-lg text-foreground mb-4">
               ¡Gracias por tu interés!
@@ -65,7 +65,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section id="contacto" className="section-padding">
+    <section id="contacto" className="section-padding bg-muted/30">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -108,7 +108,7 @@ const ContactForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Tu nombre"
-                  className="bg-white/90 border-white/50 focus:border-white text-coral-dark placeholder:text-coral-dark/50"
+                  className="bg-background border-border/50 focus:border-primary"
                 />
               </div>
               <div className="space-y-2">
@@ -124,7 +124,7 @@ const ContactForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="tu@email.com"
-                  className="bg-white/90 border-white/50 focus:border-white text-coral-dark placeholder:text-coral-dark/50"
+                  className="bg-background border-border/50 focus:border-primary"
                 />
               </div>
             </div>
@@ -141,7 +141,7 @@ const ContactForm = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+34 600 000 000"
-                className="bg-white/90 border-white/50 focus:border-white text-coral-dark placeholder:text-coral-dark/50"
+                className="bg-background border-border/50 focus:border-primary"
               />
             </div>
 
@@ -157,7 +157,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="Cuéntanos qué te gustaría saber sobre el proyecto Son Ripollet..."
                 rows={4}
-                className="bg-white/90 border-white/50 focus:border-white text-coral-dark placeholder:text-coral-dark/50 resize-none"
+                className="bg-background border-border/50 focus:border-primary resize-none"
               />
             </div>
 

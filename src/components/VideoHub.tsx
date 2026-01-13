@@ -191,7 +191,7 @@ const VideoHub = () => {
   const investorVideos = videos.slice(2);
 
   return (
-    <section id="voces" className="section-padding">
+    <section id="voces" className="section-padding bg-card">
       <div className="container-narrow">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
