@@ -34,128 +34,100 @@
 
 @layer base {
   :root {
-    /* Fundeen Brand Colors - Eggplant Base */
-    --background: 330 24% 98%;
-    --foreground: 330 38% 16%;
+    /* Mediterranean Warm Palette */
+    --background: 40 33% 98%;
+    --foreground: 220 20% 18%;
 
-    --card: 330 20% 96%;
-    --card-foreground: 330 38% 16%;
+    --card: 40 25% 96%;
+    --card-foreground: 220 20% 18%;
 
-    --popover: 330 24% 98%;
-    --popover-foreground: 330 38% 16%;
+    --popover: 40 33% 98%;
+    --popover-foreground: 220 20% 18%;
 
-    /* Primary - Eggplant Dark */
-    --primary: 330 38% 16%;
-    --primary-foreground: 47 100% 80%;
+    /* Terracotta/Coral - Warmth, Mediterranean earth */
+    --primary: 15 75% 55%;
+    --primary-foreground: 40 33% 98%;
 
-    /* Secondary - Orange */
-    --secondary: 14 80% 56%;
-    --secondary-foreground: 47 100% 95%;
+    /* Sage Green - Sustainability, nature */
+    --secondary: 150 25% 45%;
+    --secondary-foreground: 40 33% 98%;
 
-    /* Muted - Gray tones */
-    --muted: 330 10% 91%;
-    --muted-foreground: 330 15% 45%;
+    /* Warm cream for muted areas */
+    --muted: 40 30% 92%;
+    --muted-foreground: 220 15% 40%;
 
-    /* Accent - Cream */
-    --accent: 47 100% 80%;
-    --accent-foreground: 330 38% 16%;
+    /* Golden accent - Sun, warmth */
+    --accent: 38 92% 55%;
+    --accent-foreground: 220 20% 18%;
 
-    --destructive: 1 79% 55%;
-    --destructive-foreground: 47 100% 95%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 33% 98%;
 
-    --border: 330 10% 88%;
-    --input: 330 10% 88%;
-    --ring: 330 38% 16%;
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 15 75% 55%;
 
-    --radius: 2px;
+    --radius: 0.75rem;
 
-    /* Fundeen Brand Palette */
-    /* Eggplant scale */
-    --eggplant-120: 330 38% 13%;
-    --eggplant-100: 330 38% 16%;
-    --eggplant-80: 330 35% 31%;
-    --eggplant-75: 330 18% 58%;
-    --eggplant-55: 330 32% 78%;
-    --eggplant-40: 330 40% 86%;
-    --eggplant-25: 330 100% 93%;
-    --eggplant-10: 300 100% 97%;
-    
-    /* Orange scale */
-    --orange-120: 10 75% 47%;
-    --orange-100: 6 79% 55%;
-    --orange-80: 18 87% 57%;
-    --orange-70: 24 90% 63%;
-    
-    /* Cream scale */
-    --cream-120: 47 100% 80%;
-    --cream-100: 47 100% 85%;
-    --cream-80: 47 100% 90%;
-    --cream-40: 47 100% 95%;
-    --cream-25: 47 100% 96%;
-    --cream-10: 47 100% 99%;
-    
-    /* Gray scale */
-    --gray-40: 330 5% 65%;
-    --gray-25: 330 5% 78%;
-    --gray-10: 330 5% 91%;
-    
-    /* Semantic aliases */
-    --navy: 330 38% 16%;
-    --cream: 47 100% 95%;
-    --cream-dark: 47 100% 90%;
-    --terracotta: 14 80% 56%;
-    --terracotta-light: 24 90% 63%;
-    --terracotta-dark: 10 75% 47%;
-    --golden: 47 100% 80%;
+    /* Custom colors for storytelling */
+    --terracotta: 15 75% 55%;
+    --terracotta-light: 15 70% 65%;
+    --terracotta-dark: 15 80% 40%;
+    --sage: 150 25% 45%;
+    --sage-light: 150 20% 60%;
+    --cream: 40 33% 98%;
+    --cream-dark: 40 25% 92%;
+    --navy: 220 35% 22%;
+    --golden: 38 92% 55%;
 
     /* Sidebar */
-    --sidebar-background: 330 24% 98%;
-    --sidebar-foreground: 330 38% 16%;
-    --sidebar-primary: 330 38% 16%;
-    --sidebar-primary-foreground: 47 100% 95%;
-    --sidebar-accent: 330 10% 91%;
-    --sidebar-accent-foreground: 330 38% 16%;
-    --sidebar-border: 330 10% 88%;
-    --sidebar-ring: 330 38% 16%;
+    --sidebar-background: 40 33% 98%;
+    --sidebar-foreground: 220 20% 18%;
+    --sidebar-primary: 15 75% 55%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 40 30% 92%;
+    --sidebar-accent-foreground: 220 20% 18%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 15 75% 55%;
   }
 
   .dark {
-    --background: 330 38% 10%;
-    --foreground: 47 100% 95%;
+    --background: 220 25% 10%;
+    --foreground: 40 20% 95%;
 
-    --card: 330 38% 14%;
-    --card-foreground: 47 100% 95%;
+    --card: 220 25% 14%;
+    --card-foreground: 40 20% 95%;
 
-    --popover: 330 38% 10%;
-    --popover-foreground: 47 100% 95%;
+    --popover: 220 25% 10%;
+    --popover-foreground: 40 20% 95%;
 
-    --primary: 47 100% 80%;
-    --primary-foreground: 330 38% 16%;
+    --primary: 15 70% 60%;
+    --primary-foreground: 220 25% 10%;
 
-    --secondary: 18 87% 57%;
-    --secondary-foreground: 330 38% 16%;
+    --secondary: 150 25% 40%;
+    --secondary-foreground: 40 20% 95%;
 
-    --muted: 330 25% 18%;
-    --muted-foreground: 330 15% 65%;
+    --muted: 220 25% 18%;
+    --muted-foreground: 40 15% 65%;
 
-    --accent: 47 100% 70%;
-    --accent-foreground: 330 38% 16%;
+    --accent: 38 85% 55%;
+    --accent-foreground: 220 25% 10%;
 
-    --destructive: 1 62% 30%;
-    --destructive-foreground: 47 100% 95%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 20% 95%;
 
-    --border: 330 25% 20%;
-    --input: 330 25% 20%;
-    --ring: 47 100% 80%;
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 15 70% 60%;
 
-    --sidebar-background: 330 38% 10%;
-    --sidebar-foreground: 47 100% 95%;
-    --sidebar-primary: 47 100% 80%;
-    --sidebar-primary-foreground: 330 38% 16%;
-    --sidebar-accent: 330 25% 18%;
-    --sidebar-accent-foreground: 47 100% 95%;
-    --sidebar-border: 330 25% 20%;
-    --sidebar-ring: 47 100% 80%;
+    --sidebar-background: 220 25% 10%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 15 70% 60%;
+    --sidebar-primary-foreground: 220 25% 10%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 15 70% 60%;
   }
 }
 
